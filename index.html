@@ -1,0 +1,59 @@
+<h1>tic tac toe </h1>
+
+<style>
+.schoen {
+    border: 1px solid black
+}
+
+.schoen td {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    background-color: aqua
+}
+
+</style>
+
+<table class="schoen">
+    <tbody>
+        <tr>
+            <td onclick="tabelleclicked(this)"></td>
+            <td onclick="tabelleclicked(this)"></td>
+            <td onclick="tabelleclicked(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="tabelleclicked(this)"></td>
+            <td onclick="tabelleclicked(this)"></td>
+            <td onclick="tabelleclicked(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="tabelleclicked(this)"></td>
+            <td onclick="tabelleclicked(this)"></td>
+            <td onclick="tabelleclicked(this)"></td>
+        </tr>
+    </tbody>
+</table>
+
+<button onclick="schlussGeklicket()">Schluss</button>
+
+<script>
+    let xOderO = 'X';
+    function tabelleclicked(e) {
+        e.innerText = xOderO;
+        if (xOderO === 'X') {
+            xOderO = 'O';
+        } else {
+            xOderO = 'X';
+        }
+    }
+
+
+    function schlussGeklicket() {
+        const cells = document.getElementsByTagName('td');
+
+        for (const cell of cells) {
+            cell.innerText = ''
+        }
+    }
+
+</script>
